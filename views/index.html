@@ -530,7 +530,7 @@ function getCurrentAddress(location) {
     }, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             console.log(results[0]);
-            alert(results[0].formatted_address);
+            //alert(results[0].formatted_address);
             $("#pickup").val(results[0].formatted_address);
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
@@ -747,7 +747,7 @@ function getCurrentAddress(location) {
 
 		//init socket			
 
-	var socket = io.connect('http://taxi-taxiapp.7e14.starter-us-west-2.openshiftapps.com');
+	var socket = io.connect('https://taxi-taxiapp.7e14.starter-us-west-2.openshiftapps.com');
 	socket.emit('start', 'New Client connected with ID: ' + orderId + ' : ' + $('#uid').val());
 	
 	socket.on('start',function(data){				
